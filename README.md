@@ -21,5 +21,3 @@ By default (in the submitted code), the user can record up to 12.5 seconds or 10
 Audio effects can be applied by adjusting the first three switches on the board (SW). The value of these switches (0-7) corresponds to the eight different sound effects. There is visual feedback on the VGA when a sound effect is selected. The program may take some time to load the effect, as indicated by the display showing "LOADING" or all LEDs being turned on.
 
 To play the recorded audio, press Button 1 to switch to the PLAYING state. Audio playback will commence, and once completed, the system will return to IDLE. The user can switch different effects on the same recorded audio without the need to re-record when changing sound effects.
-
----
