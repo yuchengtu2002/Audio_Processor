@@ -1,23 +1,48 @@
-# Audio_Processor
-A simple audio processor coded in C and Assembly, and runs on FPGA.
+# Audio Processor
 
-**Functions:** Record audio input using a microphone, add sound effects to the recorded audio, and output it through a speaker. Sound effects include original, reverse, chipmunk (fast & high-pitch), monster (slow & low-pitch), echo, chorus, grow, and fade.
+A simple audio processor written in C and Assembly, designed to run on an FPGA. This project implements audio recording, processing, and playback capabilities using a range of sound effects.
 
-**Control and UI:** The system uses VGA and LEDs to display the interface and show the current state. KEYs and SWITCHes are used for control.
+## Features
 
-**To operate the project on the DE1-SoC board:**
+- **Audio Recording:** Capture audio input via a microphone.
+- **Sound Effects:** Apply various effects to the recorded audio, including:
+  - Original
+  - Reverse
+  - Chipmunk (fast & high-pitch)
+  - Monster (slow & low-pitch)
+  - Echo
+  - Chorus
+  - Grow
+  - Fade
+- **Audio Playback:** Output processed audio through a speaker.
 
-After running the project in the monitor program, begin by observing the current state on the display, which will be IDLE by default. This is indicated by a neutral screen display (no specific words indicating other states) and LED1 being turned on.
+## Control and User Interface
 
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/6d23faa3-067c-4c1c-b189-0d95a392c718" alt="image"/>
-</p>
+The system utilizes a VGA display and LEDs for the user interface, providing visual feedback on the current state. Control is managed through keys and switches on the DE1-SoC board.
 
+### Operating Instructions
 
-To start recording audio, press Button 0. The state will change to RECORDING, which is indicated by a corresponding message on the display and an LED pattern (LED2 turned on). Audio input is captured in real-time and stored in a buffer until Button 0 is pressed again, signaling the end of recording and reverting the system to IDLE. 
+1. **Initial State:**  
+   After running the project, the system starts in the **IDLE** state. This is indicated by a neutral display screen and LED1 being lit.
 
-By default (in the submitted code), the user can record up to 12.5 seconds or 100,000 samples. This can be adjusted by changing the SAMPLE_MAX parameter defined at the beginning of the code.
+   <p align="center">
+     <img src="https://github.com/user-attachments/assets/6d23faa3-067c-4c1c-b189-0d95a392c718" alt="image"/>
+   </p>
 
-Audio effects can be applied by adjusting the first three switches on the board (SW). The value of these switches (0-7) corresponds to the eight different sound effects. There is visual feedback on the VGA when a sound effect is selected. The program may take some time to load the effect, as indicated by the display showing "LOADING" or all LEDs being turned on.
+2. **Recording Audio:**  
+   - Press **Button 0** to begin recording. The display will show the **RECORDING** state, and LED2 will turn on.
+   - To stop recording, press **Button 0** again. The system will revert to the **IDLE** state.
+   - The default recording duration is 12.5 seconds or 100,000 samples, adjustable via the `SAMPLE_MAX` parameter in the code.
 
-To play the recorded audio, press Button 1 to switch to the PLAYING state. Audio playback will commence, and once completed, the system will return to IDLE. The user can switch different effects on the same recorded audio without the need to re-record when changing sound effects.
+3. **Applying Sound Effects:**  
+   - Use the first three switches (SW0-SW2) to select a sound effect (0-7 corresponding to each effect).
+   - The VGA display provides feedback on the selected effect. If an effect is loading, the display shows "LOADING," and all LEDs turn on.
+
+4. **Playing Audio:**  
+   - Press **Button 1** to enter the **PLAYING** state, initiating audio playback.
+   - After playback, the system returns to **IDLE**.
+   - You can switch effects on the recorded audio without needing to re-record.
+
+## Project Setup
+
+To operate the project on the DE1-SoC board, ensure that the board is properly configured and connected. Follow the above instructions for seamless operation.
